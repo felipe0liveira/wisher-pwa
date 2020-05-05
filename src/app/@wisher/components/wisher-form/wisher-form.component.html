@@ -1,0 +1,16 @@
+<div @verticalSlide class="wisher-form" *ngIf="status">
+    <a class="menu-trigger" (click)="close()">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+
+    <app-header title="novo wish" subtitle="pra lista"></app-header>
+
+    <form [formGroup]="wisherForm" (ngSubmit)="submit()" novalidate>
+        <input type="url" formControlName="url" placeholder="Cole o link do seu favorito aqui">
+        <input type="text" formControlName="title" placeholder="Título">
+        <input type="text" formControlName="description" placeholder="Descrição (Opcional)">
+        <input type="text" formControlName="category" placeholder="Categoria">
+
+        <button type="submit">ADICIONAR</button>
+    </form>
+</div>

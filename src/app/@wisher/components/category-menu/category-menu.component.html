@@ -1,0 +1,25 @@
+<div @verticalSlide class="category-menu" *ngIf="status">
+    <a class="menu-trigger" (click)="close()">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+
+    <app-header title="categorias" subtitle=""></app-header>
+
+    <div class="category-list">
+        <div class="category-item">
+            <span>Todos</span>
+        </div>
+        <div class="category-item">
+            <span>Capinhas</span>
+        </div>
+        <div class="category-item">
+            <span>Eletrônicos</span>
+        </div>
+        <div class="category-item">
+            <span>Fotografia</span>
+        </div>
+        <div class="category-item">
+            <span>Cosméticos</span>
+        </div>
+    </div>
+</div>

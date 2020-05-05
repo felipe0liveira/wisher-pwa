@@ -1,0 +1,23 @@
+<div class="home-page">
+    <a class="menu-trigger" (click)="openCategoryMenu()">
+        <i class="fa fa-chevron-down"></i>
+    </a>
+
+    <a class="wisher-trigger" (click)="openWisherForm()">
+        <i class="fa fa-plus"></i>
+    </a>
+
+    <app-header title="wisher" subtitle="todos"></app-header>
+
+    <div class="content">
+        <div class="wisher-list">
+            <div class="wisher-item animated slideInRight" *ngFor="let wish of wisherService.wishList" (click)="goToWish(wish)">
+                <span class="wisher-title">{{wish.title}}</span>
+                <span *ngIf="wish?.description" class="wisher-description">{{wish.description}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-category-menu #CategoryMenu></app-category-menu>
+<app-wisher-form #WisherForm></app-wisher-form>

@@ -1,0 +1,63 @@
+.home-page {
+    .menu-trigger {
+        position: absolute;
+        left: 30px;
+        top: 25px;
+
+        i {
+            color: #a5a5a5;
+            font-size: 5vw;
+        }
+    }
+
+    .wisher-trigger {
+        position: absolute;
+        right: 40px;
+        top: 25px;
+
+        i {
+            color: #3a80c2;
+            font-size: 5vw;
+        }
+    }
+
+    .header {
+        padding: 100px 0;
+        text-align: center;
+        .title {
+            color: #424242;
+
+            font-size: 40px;
+            line-height: 33px;
+        }
+
+        .subtitle {
+            color: #7c7c7c;
+
+            font-size: 20px;
+        }
+    }
+
+    .content {
+        .wisher-list {
+            width: 100%;
+
+            .wisher-item {
+                display: flex;
+                flex-direction: column;
+
+                padding: 40px 30px;
+                margin-bottom: 15px;
+
+                background-color: #eeeeee;
+
+                border-radius: 25px;
+
+                .wisher-description {
+                    color: #8b8b8b;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, style, transition, animate } from "@angular/animations";
+import { WisherService } from '../../services/wisher-service/wisher.service';
 
 @Component({
   selector: 'app-category-menu',
@@ -21,7 +22,7 @@ import { trigger, style, transition, animate } from "@angular/animations";
 export class CategoryMenuComponent implements OnInit {
 
   status: boolean;
-  constructor() {
+  constructor(public wisherService: WisherService) {
     this.status = false;
   }
 

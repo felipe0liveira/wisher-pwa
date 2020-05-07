@@ -11,7 +11,11 @@
 
     <div class="content">
         <div class="wisher-list">
-            <div class="wisher-item animated slideInRight" *ngFor="let wish of wisherService.wishList" (click)="goToWish(wish)">
+            <div class="wisher-item empty animated fadeIn slower" *ngIf="wisherService.wishList.length === 0">
+                <span class="wisher-title">lista vazia</span>
+                <span class="wisher-description">Clique no <i class="fa fa-plus"></i> no canto superior direito para adicionar seu primeiro favorito.</span>
+            </div>
+            <div class="wisher-item animated fadeInDown" *ngFor="let wish of wisherService.wishList" (click)="goToWish(wish)">
                 <span class="wisher-title">{{wish.title}}</span>
                 <span *ngIf="wish?.description" class="wisher-description">{{wish.description}}</span>
             </div>

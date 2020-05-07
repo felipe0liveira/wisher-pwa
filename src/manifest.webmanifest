@@ -1,7 +1,7 @@
 {
-  "name": "WisherAPP",
-  "short_name": "WisherAPP",
-  "theme_color": "#1976d2",
+  "name": "Wisher - Seus favoritos em um só lugar",
+  "short_name": "Wisher",
+  "theme_color": "#E2B75A",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",

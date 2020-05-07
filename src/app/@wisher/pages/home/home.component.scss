@@ -53,9 +53,24 @@
 
                 border-radius: 25px;
 
+                transition: 400ms ease;
+
+                .wisher-title {
+                    font-weight: bold;
+                }
+
                 .wisher-description {
                     color: #8b8b8b;
                     font-size: 12px;
+                }
+
+                &.empty {
+                    background-color: unset;
+
+                    i {
+                        color: #3a80c2;
+                        padding: 0 5px;
+                    }
                 }
             }
         }

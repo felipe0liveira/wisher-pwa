@@ -1,6 +1,6 @@
 export interface Wish {
-    category: number;
+    url: string;
     title: string;
     description?: string;
-    url: string;
+    category: number;
 }

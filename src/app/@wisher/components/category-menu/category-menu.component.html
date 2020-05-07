@@ -9,17 +9,8 @@
         <div class="category-item">
             <span>Todos</span>
         </div>
-        <div class="category-item">
-            <span>Capinhas</span>
-        </div>
-        <div class="category-item">
-            <span>Eletrônicos</span>
-        </div>
-        <div class="category-item">
-            <span>Fotografia</span>
-        </div>
-        <div class="category-item">
-            <span>Cosméticos</span>
+        <div class="category-item" *ngFor="let category of wisherService.categoryList">
+            <span>{{ category.title }}</span>
         </div>
     </div>
 </div>

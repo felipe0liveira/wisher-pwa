@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { trigger, style, transition, animate } from "@angular/animations";
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { WisherService } from '../../services/wisher-service/wisher.service';
@@ -22,17 +22,26 @@ import { WisherService } from '../../services/wisher-service/wisher.service';
 })
 export class WisherFormComponent implements OnInit {
 
+  @ViewChild('newCategoryInput') newCategoryInput: ElementRef;
+
   wisherForm: FormGroup;
   status: boolean;
-  constructor(private wisherService: WisherService) {
+  constructor(public wisherService: WisherService) {
     this.status = false;
 
     this.wisherForm = new FormGroup({
       url: new FormControl('', Validators.required),
       title: new FormControl('', Validators.required),
       description: new FormControl(''),
-      category: new FormControl('', Validators.required),
+      category: new FormControl('0', Validators.required),
+      newCategory: new FormControl(''),
     });
+
+    this.wisherForm.get('category').valueChanges.subscribe(v => {
+      if (+v === 1) {
+        setTimeout(() => this.newCategoryInput.nativeElement.focus(), 10);
+      }
+    })
   }
 
   ngOnInit(): void {
@@ -48,7 +57,15 @@ export class WisherFormComponent implements OnInit {
 
   submit(): void {
     if (this.wisherForm.valid) {
-      this.wisherService.addWish(this.wisherForm.value);
+      let formValues = this.wisherForm.value;
+      if (+formValues.category === 1) {
+        formValues.category = this.wisherService.addCategory(formValues.newCategory);
+      }
+
+      delete formValues.newCategory;
+      this.wisherService.addWish(formValues);
+      this.wisherForm.reset(undefined);
+      this.wisherForm.controls['category'].setValue(0);
       this.close();
     }
   }

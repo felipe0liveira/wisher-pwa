@@ -9,7 +9,12 @@
         <input type="url" formControlName="url" placeholder="Cole o link do seu favorito aqui">
         <input type="text" formControlName="title" placeholder="Título">
         <input type="text" formControlName="description" placeholder="Descrição (Opcional)">
-        <input type="text" formControlName="category" placeholder="Categoria">
+        <select formControlName="category">
+            <option value="0" disabled>Selecione uma categoria</option>
+            <option value="1">Adicionar uma nova categoria</option>
+            <option [value]="category.identifier" *ngFor="let category of wisherService.categoryList">{{ category.title }}</option>
+        </select>
+        <input #newCategoryInput *ngIf="wisherForm.value.category === '1'" type="text" formControlName="newCategory" placeholder="Nome da nova Categoria">
 
         <button type="submit">ADICIONAR</button>
     </form>

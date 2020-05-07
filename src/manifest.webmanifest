@@ -1,7 +1,7 @@
 {
   "name": "Wisher - Seus favoritos em um só lugar",
   "short_name": "Wisher",
-  "theme_color": "#E2B75A",
+  "theme_color": "#5501FF",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",

@@ -1,0 +1,8 @@
+<div @fade *ngIf="state" class="alert-box">
+    <div class="content">
+        <span class="close" (click)="hide()"><i class="fa fa-times"></i></span>
+        <div class="title">Error</div>
+        <div class="message">Algo de errado não está certo</div>
+    </div>
+    <div class="backdrop" (click)="hide()"></div>
+</div>

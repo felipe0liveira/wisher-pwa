@@ -7,4 +7,8 @@
 body {
     background-color: #fafafa;
     font-family: "Didact Gothic", sans-serif;
+
+    .soft-blur {
+        filter: blur(3px);
+    }
 }
